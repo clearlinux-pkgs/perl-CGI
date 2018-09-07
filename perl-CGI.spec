@@ -4,12 +4,13 @@
 #
 Name     : perl-CGI
 Version  : 4.40
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.40.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0-Perl Artistic-2.0
+Requires: perl-CGI-license
 BuildRequires : buildreq-cpan
 BuildRequires : perl(HTML::Entities)
 BuildRequires : perl(Sub::Uplevel)
@@ -32,6 +33,14 @@ Provides: perl-CGI-devel
 
 %description dev
 dev components for the perl-CGI package.
+
+
+%package license
+Summary: license components for the perl-CGI package.
+Group: Default
+
+%description license
+license components for the perl-CGI package.
 
 
 %prep
@@ -59,6 +68,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/perl-CGI
+cp LICENSE %{buildroot}/usr/share/doc/perl-CGI/LICENSE
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot}
 else
@@ -92,3 +103,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/CGI::Pretty.3
 /usr/share/man/man3/CGI::Push.3
 /usr/share/man/man3/CGI::Util.3
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/perl-CGI/LICENSE
