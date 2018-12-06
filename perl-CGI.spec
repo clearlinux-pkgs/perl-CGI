@@ -82,17 +82,17 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/CGI.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI.pod
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/Carp.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/Cookie.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/File/Temp.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/HTML/Functions.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/HTML/Functions.pod
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/Pretty.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/Push.pm
-/usr/lib/perl5/vendor_perl/5.28.0/CGI/Util.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Fh.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI.pod
+/usr/lib/perl5/vendor_perl/5.28.1CGI/Carp.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/Cookie.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/File/Temp.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/HTML/Functions.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/HTML/Functions.pod
+/usr/lib/perl5/vendor_perl/5.28.1CGI/Pretty.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/Push.pm
+/usr/lib/perl5/vendor_perl/5.28.1CGI/Util.pm
+/usr/lib/perl5/vendor_perl/5.28.1Fh.pm
 
 %files dev
 %defattr(-,root,root,-)
