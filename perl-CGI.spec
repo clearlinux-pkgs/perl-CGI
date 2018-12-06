@@ -4,7 +4,7 @@
 #
 Name     : perl-CGI
 Version  : 4.40
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.40.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.40.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
