@@ -4,13 +4,14 @@
 #
 Name     : perl-CGI
 Version  : 4.44
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.44.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.44.tar.gz
-Summary  : Handle Common Gateway Interface requests and responses
+Summary  : 'Handle Common Gateway Interface requests and responses'
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-CGI-license = %{version}-%{release}
+Requires: perl-CGI-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(HTML::Entities)
 BuildRequires : perl(Sub::Uplevel)
@@ -31,7 +32,6 @@ Summary: dev components for the perl-CGI package.
 Group: Development
 Provides: perl-CGI-devel = %{version}-%{release}
 Requires: perl-CGI = %{version}-%{release}
-Requires: perl-CGI = %{version}-%{release}
 
 %description dev
 dev components for the perl-CGI package.
@@ -45,14 +45,24 @@ Group: Default
 license components for the perl-CGI package.
 
 
+%package perl
+Summary: perl components for the perl-CGI package.
+Group: Default
+Requires: perl-CGI = %{version}-%{release}
+
+%description perl
+perl components for the perl-CGI package.
+
+
 %prep
 %setup -q -n CGI-4.44
+cd %{_builddir}/CGI-4.44
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -62,7 +72,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -71,7 +81,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-CGI
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-CGI/LICENSE
+cp %{_builddir}/CGI-4.44/LICENSE %{buildroot}/usr/share/package-licenses/perl-CGI/4ddbe6ac3bfaee77fb2e3a1c0d53f744891f2aad
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -84,17 +94,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/CGI.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI.pod
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/Carp.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/Cookie.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/File/Temp.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/HTML/Functions.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/HTML/Functions.pod
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/Pretty.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/Push.pm
-/usr/lib/perl5/vendor_perl/5.28.2/CGI/Util.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Fh.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -108,4 +107,18 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-CGI/LICENSE
+/usr/share/package-licenses/perl-CGI/4ddbe6ac3bfaee77fb2e3a1c0d53f744891f2aad
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/CGI.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI.pod
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/Carp.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/Cookie.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/File/Temp.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/HTML/Functions.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/HTML/Functions.pod
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/Pretty.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/Push.pm
+/usr/lib/perl5/vendor_perl/5.30.1/CGI/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Fh.pm
