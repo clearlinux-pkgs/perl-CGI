@@ -4,7 +4,7 @@
 #
 Name     : perl-CGI
 Version  : 4.51
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.51.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.51.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
@@ -111,14 +111,14 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/CGI.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI.pod
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/Carp.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/Cookie.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/File/Temp.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/HTML/Functions.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/HTML/Functions.pod
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/Pretty.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/Push.pm
-/usr/lib/perl5/vendor_perl/5.30.3/CGI/Util.pm
-/usr/lib/perl5/vendor_perl/5.30.3/Fh.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI.pod
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/Carp.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/Cookie.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/File/Temp.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/HTML/Functions.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/HTML/Functions.pod
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/Pretty.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/Push.pm
+/usr/lib/perl5/vendor_perl/5.32.1/CGI/Util.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Fh.pm
