@@ -1,5 +1,5 @@
 PKG_NAME := perl-CGI
-URL = https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.52.tar.gz
+URL = https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.53.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
