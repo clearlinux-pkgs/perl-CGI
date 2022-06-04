@@ -4,7 +4,7 @@
 #
 Name     : perl-CGI
 Version  : 4.54
-Release  : 36
+Release  : 37
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.54.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.54.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
@@ -111,14 +111,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/CGI.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI.pod
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/Carp.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/Cookie.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/File/Temp.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/HTML/Functions.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/HTML/Functions.pod
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/Pretty.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/Push.pm
-/usr/lib/perl5/vendor_perl/5.34.0/CGI/Util.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Fh.pm
+/usr/lib/perl5/*
