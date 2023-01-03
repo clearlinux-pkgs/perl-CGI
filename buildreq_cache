@@ -1,6 +1,5 @@
-4.54
+4.55
 perl(HTML::Entities)
 perl(Sub::Uplevel)
-perl(Test::Deep)
 perl(Test::NoWarnings)
 perl(Test::Warn)
