@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-CGI
-Version  : 4.57
-Release  : 43
-URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.57.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.57.tar.gz
+Version  : 4.59
+Release  : 44
+URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.59.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.59.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
 Group    : Development/Tools
 License  : Artistic-2.0
@@ -58,8 +58,11 @@ perl components for the perl-CGI package.
 
 
 %prep
-%setup -q -n CGI-4.57
-cd %{_builddir}/CGI-4.57
+%setup -q -n CGI-4.59
+cd %{_builddir}/CGI-4.59
+pushd ..
+cp -a CGI-4.59 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -94,6 +97,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
