@@ -7,7 +7,7 @@
 #
 Name     : perl-CGI
 Version  : 4.68
-Release  : 61
+Release  : 62
 URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.68.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.68.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
