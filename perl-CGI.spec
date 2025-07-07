@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : perl-CGI
-Version  : 4.69
-Release  : 63
-URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.69.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.69.tar.gz
+Version  : 4.70
+Release  : 64
+URL      : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.70.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.70.tar.gz
 Summary  : 'Handle Common Gateway Interface requests and responses'
 Group    : Development/Tools
 License  : Artistic-2.0
@@ -28,10 +28,9 @@ BuildRequires : perl(URI)
 %description
 # NAME
 CGI - Handle Common Gateway Interface requests and responses
-<div>
-<a href='https://travis-ci.org/leejo/CGI.pm?branch=master'><img src='https://travis-ci.org/leejo/CGI.pm.svg?branch=master' alt='Build Status' /></a>
-<a href='https://coveralls.io/r/leejo/CGI.pm'><img src='https://coveralls.io/repos/leejo/CGI.pm/badge.png?branch=master' alt='Coverage Status' /></a>
-</div>
+# SYNOPSIS
+use strict;
+use warnings;
 
 %package dev
 Summary: dev components for the perl-CGI package.
@@ -61,10 +60,10 @@ perl components for the perl-CGI package.
 
 
 %prep
-%setup -q -n CGI-4.69
-cd %{_builddir}/CGI-4.69
+%setup -q -n CGI-4.70
+cd %{_builddir}/CGI-4.70
 pushd ..
-cp -a CGI-4.69 buildavx2
+cp -a CGI-4.70 buildavx2
 popd
 
 %build
